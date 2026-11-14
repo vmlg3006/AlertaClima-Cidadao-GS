@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AlertaClima Cidadão</title><link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<main>
+<header><p class="tag">CITIZENTECH • FIAP</p><h1>AlertaClima Cidadão</h1><p>Cadastre regiões e consulte a temperatura atual. Dados demonstrativos, não são alertas oficiais.</p></header>
+<section class="painel"><h2>Cadastrar ou editar região</h2>
+<form id="formulario">
+<input type="hidden" id="id">
+<label>Bairro <input id="bairro" maxlength="80" minlength="2" required placeholder="Ex.: Pinheiros"></label>
+<label>Cidade <input id="cidade" maxlength="80" minlength="2" required value="São Paulo"></label>
+<div class="duas"><label>Latitude <input id="latitude" type="number" step="any" min="-90" max="90" required placeholder="-23.56"></label><label>Longitude <input id="longitude" type="number" step="any" min="-180" max="180" required placeholder="-46.70"></label></div>
+<label>Limite de calor (°C) <input id="limite_calor" type="number" step="0.1" min="20" max="50" value="32" required></label>
+<div class="acoes"><button type="submit">Salvar região</button><button type="button" id="cancelar" class="secundario">Cancelar edição</button></div>
+</form></section>
+<section><h2>Regiões cadastradas</h2><p id="mensagem" role="status" aria-live="polite"></p><div id="regioes" class="grade"></div></section>
+<footer>Não coleta nome, e-mail ou localização do visitante. Não substitui avisos da Defesa Civil.</footer>
+</main><script src="/static/app.js"></script>
+</body></html>
